@@ -4,7 +4,7 @@ const writeToConsole = {
   "type": "write_to_console",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "Write %1",
+  "message0": "Write Log %1",
   "args0": [
     {
       "type": "input_value",

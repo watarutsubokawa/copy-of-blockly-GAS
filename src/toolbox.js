@@ -600,6 +600,7 @@ export const toolbox = {
     {
       kind: 'category',
       name: 'HTTP',
+      colour: 45,
       contents: [
         {
           kind: 'block',
@@ -608,6 +609,34 @@ export const toolbox = {
         {
           kind: 'block',
           type: 'do_post',
+        },
+        {
+          kind: 'block',
+          type: 'return_text_output',
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: 'text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: 'block',
+          type: 'request_parameter',
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: 'text',
+                fields: {
+                  TEXT: '',
+                },
+              },
+            },
+          },
         },
       ],
     },
