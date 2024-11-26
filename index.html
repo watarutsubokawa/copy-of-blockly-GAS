@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAS maker</title>
+</head>
+<body>
+    <script>function $(target){return document.querySelector(target)}</script>
+
+    <nav style="background: gray">
+        <button onclick="$('#result').style.width='30vw';$('#result').style.display='block';$('#blockly-editor').style.width='70vw';">Open result</button>
+        <button onclick="$('#result').style.width='0vw';$('#result').style.display='none';$('#blockly-editor').style.width='100vw';">Close result</button>
+    </nav>
+    <div id="main" style="justify-content: center; align-items: stretch; height: 90vh; display: flex">
+        <div id="blockly-editor" style="width: 70vw">
+            <div id="blocklyDiv">
+            </div>
+        </div>
+        <div id="result" style="border: 0.15rem solid black; width: 30vw">
+            <button>copy</button>
+            <div id="resultTarget">
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/msg/en.js"></script>
+</body>
+</html>
