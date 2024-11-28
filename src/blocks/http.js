@@ -60,6 +60,41 @@ const getRequestParameter = {
     "colour": 45
 }
 
+const sendRequest = {
+    "type": "send_request",
+    "tooltip": "Send HTTP request",
+    "helpUrl": "",
+    "message0": "Request: %1 %2 URL: %3",
+    "args0": [
+        {
+            "type": "field_dropdown",
+            "name": "PROTOCOL",
+            "options": [
+                [
+                    "post",
+                    "'post'"
+                ],
+                [
+                    "get",
+                    "'get'"
+                ]
+            ]
+        },
+        {
+            "type": "input_dummy",
+            "name": "NAME"
+        },
+        {
+            "type": "input_value",
+            "name": "URL",
+            "check": "String"
+        }
+    ],
+    "output": "String",
+    "colour": 45
+}
+
+
 export const blocks_http = Blockly.common.createBlockDefinitionsFromJsonArray([
-    doGetMainWrapper, doPostMainWrapper, returnText, getRequestParameter
+    doGetMainWrapper, doPostMainWrapper, returnText, getRequestParameter, sendRequest
 ]);

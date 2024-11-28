@@ -8,10 +8,10 @@
     <div id="pageContainer">
       <div id="blocklyDiv"></div>
       <div id="outputPane">
+        <button style="width: 100%" onclick="navigator.clipboard.writeText(document.querySelector('#generatedCode').textContent)">copy</button>
         <pre id="generatedCode"><code></code></pre>
-        <div id="output"></div>
+        <div id="output" style="display: none"></div>
       </div>
-
     </div>
   </body>
 </html>

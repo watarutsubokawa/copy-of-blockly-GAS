@@ -33,3 +33,11 @@ forBlock['request_parameter'] = function(block, generator) {
 
   return [`__request_param.parameter[${value_text}]`, Order.NONE];
 }
+
+
+forBlock['send_request'] = function(block, generator) {
+  const value_url = generator.valueToCode(block, 'URL', Order.ATOMIC);
+  const value_protocol = block.getFieldValue('PROTOCOL');
+
+  return [`UrlFetchApp.fetch(${value_url}, {method: ${value_protocol}}).getContentText('utf-8')`, Order.NONE];
+}
