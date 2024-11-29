@@ -24,7 +24,6 @@ code {
 #outputPane {
   display: flex;
   flex-direction: column;
-  width: 400px;
   flex: 0 0 400px;
   overflow: auto;
   margin: 1rem;
@@ -32,6 +31,7 @@ code {
 
 #generatedCode {
   height: 50%;
+  width: 95%;
   background-color: rgb(247, 240, 228);
 }
 

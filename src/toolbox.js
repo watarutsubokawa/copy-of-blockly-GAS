@@ -583,9 +583,6 @@ export const toolbox = {
       ],
     },
     {
-      kind: 'sep',
-    },
-    {
       kind: 'category',
       name: 'Variables',
       categorystyle: 'variable_category',
@@ -596,6 +593,9 @@ export const toolbox = {
       name: 'Functions',
       categorystyle: 'procedure_category',
       custom: 'PROCEDURE',
+    },
+    {
+      kind: 'sep',
     },
     {
       kind: 'category',
@@ -638,7 +638,28 @@ export const toolbox = {
             },
           },
         },
+        {
+          kind: 'block',
+          type: 'send_request',
+          inputs: {
+
+            URL: {
+              shadow: {
+                type: 'text',
+                fields: {
+                  TEXT: 'https://www.example.com/',
+                },
+              },
+            },
+          }
+        },
       ],
+    },
+    {
+      kind: 'category',
+      name: 'Sheets',
+      colour: 210,
+      contents: [],
     },
   ],
 };
