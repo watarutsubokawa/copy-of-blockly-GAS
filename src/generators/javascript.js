@@ -41,3 +41,9 @@ forBlock['send_request'] = function(block, generator) {
 
   return [`UrlFetchApp.fetch(${value_url}, {method: ${value_protocol}}).getContentText('utf-8')`, Order.NONE];
 }
+
+forBlock['send_webhook_message'] = function(block, generator) {
+  const value_message = generator.valueToCode(block, 'MESSAGE', Order.ATOMIC);
+  const value_url = generator.valueToCode(block, 'URL', Order.ATOMIC);
+  return `UrlFetchApp.fetch(${value_url}, {method: 'post', headers: {'Content-Type': 'application/json; charset=UTF-8'}, payload: JSON.stringify( {text: ${value_message}} ) });\n`;
+}

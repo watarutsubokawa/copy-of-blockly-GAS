@@ -1,6 +1,7 @@
 import * as Blockly from 'blockly';
 import {blocks_text} from './blocks/text';
 import {blocks_http} from './blocks/http';
+import {blocks_forms} from "./blocks/forms";
 import {forBlock} from './generators/javascript';
 import {javascriptGenerator} from 'blockly/javascript';
 import {save, load} from './serialization';
@@ -10,6 +11,7 @@ import './index.css';
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(blocks_text);
 Blockly.common.defineBlocks(blocks_http);
+Blockly.common.defineBlocks(blocks_forms);
 Object.assign(javascriptGenerator.forBlock, forBlock);
 
 // Set up UI elements and inject Blockly

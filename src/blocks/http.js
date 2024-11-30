@@ -94,7 +94,29 @@ const sendRequest = {
     "colour": 45
 }
 
+const sendWebhookMessage = {
+    "type": "send_webhook_message",
+    "tooltip": "send webhook message",
+    "helpUrl": "",
+    "message0": "Webhook Message: %1 URL: %2",
+    "args0": [
+        {
+            "type": "input_value",
+            "name": "MESSAGE",
+            "check": "String"
+        },
+        {
+            "type": "input_value",
+            "name": "URL",
+            "check": "String"
+        }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 45
+}
+
 
 export const blocks_http = Blockly.common.createBlockDefinitionsFromJsonArray([
-    doGetMainWrapper, doPostMainWrapper, returnText, getRequestParameter, sendRequest
+    doGetMainWrapper, doPostMainWrapper, returnText, getRequestParameter, sendRequest, sendWebhookMessage
 ]);

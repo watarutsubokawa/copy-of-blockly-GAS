@@ -642,7 +642,6 @@ export const toolbox = {
           kind: 'block',
           type: 'send_request',
           inputs: {
-
             URL: {
               shadow: {
                 type: 'text',
@@ -653,13 +652,27 @@ export const toolbox = {
             },
           }
         },
+        {
+          kind: 'block',
+          type: 'send_webhook_message',
+          inputs: {
+            MESSAGE: { shadow: { type: 'text', fields: { TEXT: '' } } },
+            URL: { shadow: { type: 'text', fields: { TEXT: '' } } },
+          },
+        },
       ],
     },
     {
       kind: 'category',
       name: 'Sheets',
-      colour: 210,
+      colour: 105,
       contents: [],
     },
+    {
+      kind: 'category',
+      name: 'Forms',
+      colour: 285,
+      contents: [],
+    }
   ],
 };
