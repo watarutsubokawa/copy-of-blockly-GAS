@@ -672,7 +672,16 @@ export const toolbox = {
       kind: 'category',
       name: 'Forms',
       colour: 285,
-      contents: [],
+      contents: [
+        {
+          kind: 'block',
+          type: 'on_form_submit',
+        },
+        {
+          kind: 'block',
+          type: 'form_get_Nth_answer',
+        }
+      ],
     }
   ],
 };

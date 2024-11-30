@@ -47,3 +47,15 @@ forBlock['send_webhook_message'] = function(block, generator) {
   const value_url = generator.valueToCode(block, 'URL', Order.ATOMIC);
   return `UrlFetchApp.fetch(${value_url}, {method: 'post', headers: {'Content-Type': 'application/json; charset=UTF-8'}, payload: JSON.stringify( {text: ${value_message}} ) });\n`;
 }
+
+forBlock['on_form_submit'] = function(block, generator) {
+  const statement_name = generator.statementToCode(block, 'NAME');
+
+  return `function onFormSubmit(__event_param){\n${statement_name}\n}`;
+}
+
+forBlock['form_get_Nth_answer'] = function(block, generator) {
+  const number_index = block.getFieldValue('INDEX');
+
+  return [`__event_param.response.getItemResponses()[${number_index-1}].getResponse()`, Order.NONE];
+}
