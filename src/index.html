@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Blockly Sample App</title>
@@ -8,7 +8,16 @@
     <div id="pageContainer">
       <div id="blocklyDiv"></div>
       <div id="outputPane">
-        <button style="width: 100%" onclick="navigator.clipboard.writeText(document.querySelector('#generatedCode').textContent)">copy</button>
+        <button style="width: 100%" id="copy">copy</button>
+        <script>
+          document.querySelector('#copy').addEventListener('click', function () {
+            let str = "/**===DATA_START===";
+            str += document.querySelector('code').innerHTML.replaceAll('<br>', '\n');
+            str += '\n' + localStorage.getItem(window.nowStorageKey);
+            str += "/**==="
+            navigator.clipboard.writeText(str);
+          })
+        </script>
         <pre id="generatedCode"><code></code></pre>
         <div id="output" style="display: none"></div>
       </div>

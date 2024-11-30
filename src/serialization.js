@@ -17,6 +17,7 @@ export const save = function (workspace) {
  */
 export const load = function (workspace) {
   const data = window.localStorage?.getItem(storageKey);
+  window.nowStorageKey = storageKey;
   if (!data) return;
 
   // Don't emit events during loading.
