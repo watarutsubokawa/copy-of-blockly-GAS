@@ -675,7 +675,10 @@ export const toolbox = {
       contents: [
         {
           kind: 'block',
-          type: 'on_form_submit',
+          type: 'form_on_submit',
+          inputs: {
+            ID: { shadow: { type: 'text', fields: { TEXT: '' } } },
+          },
         },
         {
           kind: 'block',

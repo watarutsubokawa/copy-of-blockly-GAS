@@ -48,10 +48,18 @@ forBlock['send_webhook_message'] = function(block, generator) {
   return `UrlFetchApp.fetch(${value_url}, {method: 'post', headers: {'Content-Type': 'application/json; charset=UTF-8'}, payload: JSON.stringify( {text: ${value_message}} ) });\n`;
 }
 
-forBlock['on_form_submit'] = function(block, generator) {
-  const statement_name = generator.statementToCode(block, 'NAME');
+forBlock['form_on_submit'] = function(block, generator) {
+  const value_id = generator.valueToCode(block, 'ID', Order.ATOMIC);
+  const statement_statement = generator.statementToCode(block, 'STATEMENT');
 
-  return `function onFormSubmit(__event_param){\n${statement_name}\n}`;
+  return `
+function registerFormEvent() {
+  ScriptApp.newTrigger('onFormSubmit').forForm(FormApp.openById(${value_id})).onFormSubmit().create();
+}
+function onFormSubmit(__event_param) {
+  ${statement_statement}
+}
+`;
 }
 
 forBlock['form_get_Nth_answer'] = function(block, generator) {

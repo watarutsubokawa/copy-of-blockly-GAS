@@ -1,15 +1,19 @@
 import * as Blockly from "blockly/core";
 
 const onFormSubmit = {
-    "type": "on_form_submit",
+    "type": "form_on_submit",
     "tooltip": "will be executed when sending the form",
     "helpUrl": "",
-    "message0": "on form submit %1",
+    "message0": "form ID: %1 on form submit %2",
     "args0": [
         {
-            "type": "input_statement",
-            "name": "NAME",
+            "type": "input_value",
+            "name": "ID",
             "check": "String"
+        },
+        {
+            "type": "input_statement",
+            "name": "STATEMENT"
         }
     ],
     "colour": 285
