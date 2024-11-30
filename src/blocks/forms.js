@@ -9,7 +9,8 @@ const onFormSubmit = {
         {
             "type": "input_value",
             "name": "ID",
-            "check": "String"
+            "check": "String",
+            "align": "RIGHT",
         },
         {
             "type": "input_statement",
