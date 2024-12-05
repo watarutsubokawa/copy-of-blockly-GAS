@@ -11,7 +11,7 @@
         <button style="width: 100%" id="copy">copy</button>
         <script>
           document.querySelector('#copy').addEventListener('click', function () {
-            let str = "/**===DATA_BEGIN===";
+            let str = "/*===DATA_BEGIN===";
             str += document.querySelector('code').innerHTML.replaceAll('<br>', '\n');
             str += '\n' + localStorage.getItem(window.nowStorageKey);
             str += "===DATA_END===*/"
